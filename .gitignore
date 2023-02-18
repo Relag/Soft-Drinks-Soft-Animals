@@ -1,6 +1,7 @@
 PackageCache
 Temp/UnityLockfile
 Unity Project/Temp
+Unity Project/Library/StateCache
 
 /[Ll]ibrary/
 /[Tt]emp/
