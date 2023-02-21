@@ -382,6 +382,7 @@
 "Assets/Scripts/SodaButtonScripts/Soda1Script.cs"
 "Assets/Scripts/SodaButtonScripts/Soda2Script.cs"
 "Assets/Scripts/SodaButtonScripts/Soda3Script.cs"
+"Assets/Scripts/SuccessOrFail.cs"
 -langversion:9.0
 
 /deterministic

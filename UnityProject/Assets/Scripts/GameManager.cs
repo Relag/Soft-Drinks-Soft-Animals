@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager: MonoBehaviour
 {
     public static GameManager Instance;
-
+    
     private void Awake()
     {
         Instance = this;
@@ -19,8 +19,18 @@ public class GameManager: MonoBehaviour
         none
     };
 
-    public cup size;
+    //Set these values at start of level and after each success or fail
+    public int drink1;
+    public int drink2;
+    public int drink3;
+    public bool topping1;
+    public bool topping2;
+    public bool topping3;
+    public cup howbig;
 
+
+    public cup size;
+    public GameObject succorfail;
     //Sodas
     public int soda1 = 0;
     public int soda2 = 0;
@@ -29,6 +39,8 @@ public class GameManager: MonoBehaviour
     public bool flavor1 = false;
     public bool flavor2 = false;
     public bool flavor3 = false;
+
+    public bool PassFail = false;
 
     GameObject[] SizeButtons; //Including all size buttons in order to hide and show them
     GameObject[] FlavorButtons;
@@ -47,7 +59,15 @@ public class GameManager: MonoBehaviour
 
     public void init()
     {
-        
+        drink1 = 25;
+        drink2 = 50;
+        drink3 = 25;
+        topping1 = false;
+        topping2 = true;
+        topping3 = false;
+        howbig = cup.medium;
+
+
 
         size = cup.none;
         //Sodas
@@ -78,24 +98,24 @@ public class GameManager: MonoBehaviour
 
     }
 
-    public bool Checkdrink(int drink1, int drink2, int drink3, bool topping1, bool topping2, bool topping3, cup howbig) //If you're reading this I know there's a better way but I'm lazy
+    public void Checkdrink() //If you're reading this I know there's a better way but I'm lazy
     {
 
         if(howbig != size)
         {
-            return false;
+            PassFail = false;
         }
         else if (soda1 > (drink1 + 5) || soda1 < (drink1 - 5) || (soda2 > (drink2 + 5) || soda2 < (drink2 - 5)) || (soda3 > (drink3 + 5) || soda3 < (drink3 - 5))) 
         {
-            return false;
+            PassFail = false;
         }
-        else if (flavor1 != topping1 && flavor2 != topping2 && flavor3 != topping3)
+        else if (flavor1 == topping1 && flavor2 == topping2 && flavor3 == topping3)
         {
-            return false;
+            PassFail = true;
         }
         else
         {
-            return true;
+            PassFail = false;
         }
     }
 
