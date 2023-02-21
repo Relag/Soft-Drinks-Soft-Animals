@@ -1,7 +1,10 @@
 PackageCache
 Temp/UnityLockfile
-Unity Project/Temp
-Unity Project/Library/StateCache
+UnityProject/Temp
+UnityProject/Library/StateCache
+UnityProject/Logs
+UnityProject/Library/Artifacts
+UnityProject/ProjectSettings/SceneTemplateSettings.json
 
 /[Ll]ibrary/
 /[Tt]emp/
@@ -71,5 +74,5 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-Unity Project/ProjectSettings/SceneTemplateSettings.json
-Unity Project/Library/Artifacts
+
+
