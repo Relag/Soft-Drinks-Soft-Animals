@@ -2,6 +2,7 @@ PackageCache
 Temp/UnityLockfile
 Unity Project/Temp
 Unity Project/Library/StateCache
+Unity Project/Library/Artifacts
 
 /[Ll]ibrary/
 /[Tt]emp/
@@ -72,4 +73,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Unity Project/ProjectSettings/SceneTemplateSettings.json
-Unity Project/Library/Artifacts
+Unity Project/Library/Artifacts/92/9201b43b2e7ca17cca28acc907ee203e
