@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class CupScript : MonoBehaviour
 {
+
+    bool Instand = false;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
+    //Soda1 = -7.25, 3
+    //Soda2 = -5.8, 3
+    //Soda3 = -4.45, 3
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = mousePosition;
+        if (Instand == false)
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = mousePosition;
+        }
     }
+
 
     public void SizeSmall()
     {
@@ -33,4 +42,14 @@ public class CupScript : MonoBehaviour
     {
         transform.localScale = new Vector3(0.5f, 0.8f, 0);
     }
+    public void SetInstandTrue()
+    {
+        Instand = true;
+    }
+    public void SetInstandFalse()
+    {
+        Instand = false;
+    }
+
+
 }
