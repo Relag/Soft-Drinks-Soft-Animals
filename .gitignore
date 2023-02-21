@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Unity Project/ProjectSettings/SceneTemplateSettings.json
+Unity Project/Library/Artifacts
