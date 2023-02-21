@@ -53,6 +53,7 @@ public class GameManager: MonoBehaviour
         FlavorButtons = GameObject.FindGameObjectsWithTag("FlavorButtons");
         SodaButtons = GameObject.FindGameObjectsWithTag("SodaButtons");
         Cup = GameObject.FindGameObjectsWithTag("CupTag");
+        init();
     }
 
 
