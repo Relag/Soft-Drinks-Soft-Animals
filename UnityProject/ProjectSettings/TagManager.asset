@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - SizeButtons
+  - CupTag
+  - FlavorButtons
+  - SodaButtons
   layers:
   - Default
   - TransparentFX

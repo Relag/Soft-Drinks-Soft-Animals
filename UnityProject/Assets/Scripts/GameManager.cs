@@ -19,23 +19,21 @@ public class GameManager: MonoBehaviour
         none
     };
 
-    cup size;
+    public cup size;
 
     //Sodas
-    int soda1 = 0;
-    int soda2 = 0;
-    int soda3 = 0;
+    public int soda1 = 0;
+    public int soda2 = 0;
+    public int soda3 = 0;
     //Flavors
-    bool flavor1 = false;
-    bool flavor2 = false;
-    bool flavor3 = false;
+    public bool flavor1 = false;
+    public bool flavor2 = false;
+    public bool flavor3 = false;
 
     GameObject[] SizeButtons; //Including all size buttons in order to hide and show them
     GameObject[] FlavorButtons;
     GameObject[] SodaButtons;
     GameObject[] Cup;
-
-    bool ispressed = false;
 
     private void Start()
     {
