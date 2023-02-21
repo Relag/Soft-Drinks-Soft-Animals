@@ -19,9 +19,9 @@ public class Soda1Script : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Update()
     {
-        if (manager.size != GameManager.cup.none)
+        if (manager.size != GameManager.cup.none && ((manager.soda1 + manager.soda2 + manager.soda3) < 100))
         {
-            if (ispressed && count >= 50)
+            if (ispressed && count >= 10)
             {
                 manager.soda1 += 1;
                 count = 0;

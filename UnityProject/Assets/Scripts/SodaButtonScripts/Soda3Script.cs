@@ -21,7 +21,7 @@ public class Soda3Script : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (manager.size != GameManager.cup.none)
         {
-            if (ispressed && count >= 50)
+            if (ispressed && count >= 10)
             {
                 manager.soda3 += 1;
                 count = 0;

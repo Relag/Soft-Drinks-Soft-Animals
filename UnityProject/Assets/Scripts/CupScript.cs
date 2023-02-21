@@ -27,7 +27,7 @@ public class CupScript : MonoBehaviour
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePosition;
         }
-        txt.text = (Manager.soda1 + Manager.soda2 + Manager.soda3).ToString();
+        txt.text = (Manager.soda1 + Manager.soda2 + Manager.soda3).ToString() + "%";
     }
 
 
