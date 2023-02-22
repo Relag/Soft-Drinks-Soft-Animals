@@ -77,3 +77,9 @@ crashlytics-build.properties
 
 
 *.cache
+UnityProject/Library/EditorInstance.json
+UnityProject/Library/ArtifactDB
+UnityProject/Library/BurstCache/JIT/CacheManifest.json
+UnityProject/Library/EditorInstance.json
+UnityProject/Library/SourceAssetDB
+UnityProject/UserSettings/Layouts/default-2021.dwlt
