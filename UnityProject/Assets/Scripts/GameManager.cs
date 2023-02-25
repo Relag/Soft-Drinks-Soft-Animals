@@ -116,12 +116,13 @@ public class GameManager : MonoBehaviour
         {
             PassFail = true;
             OrderNumber += 1;
-            ChangeOrder();
+            
         }
         else
         {
             PassFail = false;
         }
+        ChangeOrder();
     }
 
 
@@ -153,13 +154,6 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void SetSize()
-    {
-        foreach (GameObject button in SizeButtons)
-        {
-            button.SetActive(false);
-        }
-    }
     public void HideCup()
     {
         foreach (GameObject item in Cup)
