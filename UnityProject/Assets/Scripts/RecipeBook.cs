@@ -7,6 +7,7 @@ using TMPro;
 public class RecipeBook : MonoBehaviour
 {
     public int page = 0;
+    private int MAX_PAGE = 3;
 
     public TextMeshProUGUI LeftText;
     public TextMeshProUGUI RightText;
@@ -17,9 +18,9 @@ public class RecipeBook : MonoBehaviour
         {
             page = 0;
         }
-        else if (page > 3)
+        else if (page > MAX_PAGE)
         {
-            page = 3;
+            page = MAX_PAGE;
         }
         else
         {
@@ -49,7 +50,7 @@ public class RecipeBook : MonoBehaviour
 
     public void PageForward()
     {
-        if (page < 3)
+        if (page < MAX_PAGE)
         {
             page += 1;
         }
