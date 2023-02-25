@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager: MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    
+
     private void Awake()
     {
         Instance = this;
@@ -41,6 +41,8 @@ public class GameManager: MonoBehaviour
     public bool flavor3 = false;
 
     public bool PassFail = false;
+
+    public int OrderNumber = 1;
 
     GameObject[] SizeButtons; //Including all size buttons in order to hide and show them
     GameObject[] FlavorButtons;
@@ -84,7 +86,7 @@ public class GameManager: MonoBehaviour
         {
             button.SetActive(true);
         }
-       foreach (GameObject button2 in FlavorButtons)
+        foreach (GameObject button2 in FlavorButtons)
         {
             button2.SetActive(true);
         }
@@ -102,17 +104,18 @@ public class GameManager: MonoBehaviour
     public void Checkdrink() //If you're reading this I know there's a better way but I'm lazy
     {
 
-        if(howbig != size)
+        if (howbig != size)
         {
             PassFail = false;
         }
-        else if (soda1 > (drink1 + 5) || soda1 < (drink1 - 5) || (soda2 > (drink2 + 5) || soda2 < (drink2 - 5)) || (soda3 > (drink3 + 5) || soda3 < (drink3 - 5))) 
+        else if (soda1 > (drink1 + 5) || soda1 < (drink1 - 5) || (soda2 > (drink2 + 5) || soda2 < (drink2 - 5)) || (soda3 > (drink3 + 5) || soda3 < (drink3 - 5)))
         {
             PassFail = false;
         }
         else if (flavor1 == topping1 && flavor2 == topping2 && flavor3 == topping3)
         {
             PassFail = true;
+            OrderNumber += 1;
         }
         else
         {
@@ -170,6 +173,134 @@ public class GameManager: MonoBehaviour
             item.SetActive(true);
         }
     }
+
+
+
+    //Main Game Controls Here
+    public void TrashDrink()
+    {
+        size = cup.none;
+        //Sodas
+        soda1 = 0;
+        soda2 = 0;
+        soda3 = 0;
+        //Flavors
+        flavor1 = false;
+        flavor2 = false;
+        flavor3 = false;
+    }
+
+    public void ChangeOrder()
+    {
+        switch (OrderNumber)
+        {
+            case 2:
+                Day1Order2();
+                break;
+            case 3:
+                Day1Order3();
+                break;
+            case 4:
+                Day1Order4();
+                break;
+            case 5:
+                Day1Order5();
+                break;
+            case 6:
+                Day1Order6();
+                break;
+            case 7:
+                Day1Order7();
+                break;
+
+
+
+
+
+            case < 7:
+                Debug.Log("error");
+                OrderNumber = 7;
+                break;
+
+            case > 2:
+                Debug.Log("error");
+                OrderNumber = 2;
+                break;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    public void Day1Order2()
+    {
+        drink1 = 25;
+        drink2 = 50;
+        drink3 = 25;
+        topping1 = true;
+        topping2 = true;
+        topping3 = false;
+        howbig = cup.large;
+    }
+    public void Day1Order3()
+    {
+        drink1 = 25;
+        drink2 = 50;
+        drink3 = 25;
+        topping1 = true;
+        topping2 = true;
+        topping3 = false;
+        howbig = cup.large;
+    }
+    public void Day1Order4()
+    {
+        drink1 = 25;
+        drink2 = 50;
+        drink3 = 25;
+        topping1 = true;
+        topping2 = true;
+        topping3 = false;
+        howbig = cup.large;
+    }
+    public void Day1Order5()
+    {
+        drink1 = 25;
+        drink2 = 50;
+        drink3 = 25;
+        topping1 = true;
+        topping2 = true;
+        topping3 = false;
+        howbig = cup.large;
+    }
+    public void Day1Order6()
+    {
+        drink1 = 25;
+        drink2 = 50;
+        drink3 = 25;
+        topping1 = true;
+        topping2 = true;
+        topping3 = false;
+        howbig = cup.large;
+    }
+    public void Day1Order7()
+    {
+        drink1 = 25;
+        drink2 = 50;
+        drink3 = 25;
+        topping1 = true;
+        topping2 = true;
+        topping3 = false;
+        howbig = cup.large;
+    }
+
+
+
 
 
 }

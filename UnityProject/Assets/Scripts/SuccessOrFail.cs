@@ -10,6 +10,7 @@ public class SuccessOrFail : MonoBehaviour
     // Start is called before the first frame update
     public Image image;
 
+
     private void Update()
     {
         if(manager.PassFail == false)
