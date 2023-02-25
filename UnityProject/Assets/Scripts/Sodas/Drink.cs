@@ -9,6 +9,9 @@ public class Drink {
     protected bool grapeFlavouring;
     protected bool cherryFlavouring;
     protected bool strawberryFlavouring;
+    protected string name;
+    protected string description;
+
 
     protected enum SIZE
     {
