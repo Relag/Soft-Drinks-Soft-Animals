@@ -35,4 +35,21 @@ public class Drink {
 
         return true;
     }
+
+    public string getDescription() {
+        return description;
+    }
+
+    public string getRecipe() {
+        string returnString = "Pepsi %" + pepsiPercent + "\nCoke %" + cokePercent + "\nRoot Beer %" + rootBeerPercent;
+
+        if (grapeFlavouring)
+            returnString += "\nAdd Grape Shot";
+        if (cherryFlavouring)
+            returnString += "\nAdd Cherry Shot";
+        if (strawberryFlavouring)
+            returnString += "\nAdd Strawberry Shot";
+
+        return returnString;
+    }
 }

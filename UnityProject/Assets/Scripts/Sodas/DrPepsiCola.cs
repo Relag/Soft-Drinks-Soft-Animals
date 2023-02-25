@@ -12,6 +12,6 @@ public class DrPepsiCola : Drink
         strawberryFlavouring = false;
         grapeFlavouring = false;
         name = "Dr. Pepsi-Cola";
-        description = "Make sure to get these percentages right. He’ll judge you if you don’t. \n" + "Your grandma wanted me to go into accounting, you know that? Nothing wrong with that, just wasn’t for me.I needed a bit of color in my life—something crazy every once in a while.No one ever wants craziness in their accounting. \n" + "- Aunt Dora";
+        description = "Make sure to get these percentages right. He’ll judge you if you don’t. \r\n" + "Your grandma wanted me to go into accounting, you know that? Nothing wrong with that, just wasn’t for me.I needed a bit of color in my life—something crazy every once in a while.No one ever wants craziness in their accounting. \n" + "- Aunt Dora";
     }
 }
