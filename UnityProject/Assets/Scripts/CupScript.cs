@@ -57,4 +57,13 @@ public class CupScript : MonoBehaviour
     }
 
 
+
+
+
+    public void GoToMouse()
+    {
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = mousePosition;
+    }
+
 }
