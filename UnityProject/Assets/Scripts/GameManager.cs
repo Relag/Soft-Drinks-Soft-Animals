@@ -8,7 +8,12 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        void Awake() {
+            if (Instance == null)
+                Instance = this;
+            else if (Instance != this)
+                Destroy(gameObject);
+        }
     }
 
     public enum cup
