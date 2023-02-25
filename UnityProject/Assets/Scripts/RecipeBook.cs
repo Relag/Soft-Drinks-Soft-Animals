@@ -7,10 +7,11 @@ using TMPro;
 public class RecipeBook : MonoBehaviour
 {
     public int page = 0;
-    private int MAX_PAGE = 3;
+    private int MAX_PAGE = 0;
 
     public TextMeshProUGUI LeftText;
     public TextMeshProUGUI RightText;
+    DrPepsiCola drPepsiCola = new DrPepsiCola();
 
     void Update()
     {
@@ -27,11 +28,11 @@ public class RecipeBook : MonoBehaviour
             switch (page)
             {
                 case 0:
-                    LeftText.text = Left0;
-                    RightText.text = Right0;
+                    LeftText.text = drPepsiCola.getRecipe();
+                    RightText.text = drPepsiCola.getDescription();
                     break;
 
-
+/*
                 case 1:
                     LeftText.text = Left1;
                     RightText.text = Right1;
@@ -43,7 +44,7 @@ public class RecipeBook : MonoBehaviour
                 case 3:
                     LeftText.text = Left3;
                     RightText.text = Right3;
-                    break;
+                    break;*/
             }  
         }
     }
@@ -63,7 +64,10 @@ public class RecipeBook : MonoBehaviour
         }
     }
 
-    public string Left0 = "My favorite Drink/n- 1 / 4 Soda 1/n-2/4 Soda 2/n-1/4 Soda 3/n-Flavour 2/nMedium Size/nNothing Else.";
+
+
+    
+    /*public string Left0 = "My favorite Drink/n- 1 / 4 Soda 1/n-2/4 Soda 2/n-1/4 Soda 3/n-Flavour 2/nMedium Size/nNothing Else.";
     public string Right0 = "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
 
 
@@ -74,5 +78,6 @@ public class RecipeBook : MonoBehaviour
     public string Right2 = "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
 
     public string Left3 = "My favorite Drink/n- 1 / 4 Soda 1/n-2/4 Soda 2/n-1/4 Soda 3/n-Flavour 2/nMedium Size/nNothing Else.";
-    public string Right3 = "My favorite Drink/n- 1 / 4 Soda 1/n-2/4 Soda 2/n-1/4 Soda 3/n-Flavour 2/nMedium Size/nNothing Else.";
+    public string Right3 = "My favorite Drink/n- 1 / 4 Soda 1/n-2/4 Soda 2/n-1/4 Soda 3/n-Flavour 2/nMedium Size/nNothing Else.";*/
+    
 }
