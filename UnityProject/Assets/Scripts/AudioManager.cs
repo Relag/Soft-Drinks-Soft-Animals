@@ -16,6 +16,8 @@ public class AudioManager : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
+
+        DontDestroyOnLoad(transform.gameObject);
     }
 
     // Update is called once per frame
