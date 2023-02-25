@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
         {
             PassFail = true;
             OrderNumber += 1;
+            ChangeOrder();
         }
         else
         {
@@ -238,7 +239,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void Day1Order2()
+    void Day1Order2()
     {
         drink1 = 25;
         drink2 = 50;
@@ -248,7 +249,7 @@ public class GameManager : MonoBehaviour
         topping3 = false;
         howbig = cup.large;
     }
-    public void Day1Order3()
+    void Day1Order3()
     {
         drink1 = 25;
         drink2 = 50;
@@ -258,7 +259,7 @@ public class GameManager : MonoBehaviour
         topping3 = false;
         howbig = cup.large;
     }
-    public void Day1Order4()
+    void Day1Order4()
     {
         drink1 = 25;
         drink2 = 50;
@@ -268,7 +269,7 @@ public class GameManager : MonoBehaviour
         topping3 = false;
         howbig = cup.large;
     }
-    public void Day1Order5()
+    void Day1Order5()
     {
         drink1 = 25;
         drink2 = 50;
@@ -278,7 +279,7 @@ public class GameManager : MonoBehaviour
         topping3 = false;
         howbig = cup.large;
     }
-    public void Day1Order6()
+    void Day1Order6()
     {
         drink1 = 25;
         drink2 = 50;
@@ -288,7 +289,7 @@ public class GameManager : MonoBehaviour
         topping3 = false;
         howbig = cup.large;
     }
-    public void Day1Order7()
+    void Day1Order7()
     {
         drink1 = 25;
         drink2 = 50;
