@@ -33,15 +33,15 @@ public class CupScript : MonoBehaviour
 
     public void SizeSmall()
     {
-        transform.localScale = new Vector3(1f, 1f, 0);
+        Manager.size = GameManager.cup.small;
     }
     public void SizeMedium()
     {
-        transform.localScale = new Vector3(1f, 1.5f, 0);
+        Manager.size = GameManager.cup.medium;
     }
     public void SizeLarge()
     {
-        transform.localScale = new Vector3(1f, 2f, 0);
+        Manager.size = GameManager.cup.large;
     }
     public void ResetSize()
     {

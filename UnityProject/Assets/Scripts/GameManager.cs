@@ -159,6 +159,8 @@ public class GameManager : MonoBehaviour
 
 
 
+
+
     public void HideCup()
     {
         foreach (GameObject item in Cup)
