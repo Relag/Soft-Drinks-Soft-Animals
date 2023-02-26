@@ -26,7 +26,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 8065
+  controlID: 20732
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 8057
+  controlID: 20723
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,8 +166,8 @@ MonoBehaviour:
     y: 0
     width: 914
     height: 460
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -453,9 +453,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 389.14648, y: 216.40366, z: 2.9923105}
+    m_Target: {x: -12.41086, y: 0.53521407, z: 0.041623868}
     speed: 2
-    m_Value: {x: 389.14648, y: 216.40366, z: 2.9923105}
+    m_Value: {x: -12.41086, y: 0.53521407, z: 0.041623868}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -506,9 +506,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 263.4093
+    m_Target: 6.3100634
     speed: 2
-    m_Value: 263.4093
+    m_Value: 6.3100634
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -618,7 +618,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9816ffff821bffffe61bffff8e1effff401fffffec21ffffbc31ffffd83dffff98aaffff18abffff16afffff1afaffffb26100002c620000e28900004a8a0000948a00006e8c00007e8c0000ac8d0000ee900000fe900000
+      m_ExpandedIDs: 0a05ffffcc07ffff4008ffff9816ffff821bffffe61bffff8e1effff401fffffec21ffffbc31ffffd83dffff98aaffff18abffff16afffff1afaffffb26100002c620000e28900004a8a0000948a00006e8c00007e8c0000ac8d0000ee900000fe900000249600001a97000026970000309700003a970000469700007c9700009a970000d89700002298000036980000409800004c980000789800007c980000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -634,7 +634,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 6}
+        m_ClientGUIView: {fileID: 7}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -709,22 +709,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Sodas
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Sodas
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Garguth\3-School Labs and work\Github\GameJam 2023\Soft-Drinks-Soft-Animals\UnityProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e4620000
-    m_LastClickedID: 25316
-    m_ExpandedIDs: 00000000d4620000d6620000d8620000da62000000ca9a3b
+    m_SelectedIDs: ee620000
+    m_LastClickedID: 25326
+    m_ExpandedIDs: 00000000d4620000d6620000d8620000da620000e662000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
