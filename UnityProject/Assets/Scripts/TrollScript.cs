@@ -88,6 +88,22 @@ public class TrollScript : MonoBehaviour
         trollScript.Add("");
         trollScript.Add("");
         trollScript.Add("");
+        trollScript.Add("Please stop. I didn't code in disabling the forward button. ");
+        trollScript.Add("I spent all my time on this joke script...");
+        trollScript.Add("Oh no, my own petard.");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("Oh yeah, you're still doing this? Fine. FINE!");
+        trollScript.Add("There, the back button is disabled again. You're stuck here until you either alt-f4 or crash Unity.");
+        trollScript.Add("You happy now?");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
         trollScript.Add("");
         trollScript.Add("");
     }
@@ -110,5 +126,8 @@ public class TrollScript : MonoBehaviour
 
         if (lineNum == 38)
             backButton.SetActive(true);
+
+        if (lineNum == 77)
+            backButton.SetActive(false);
     }
 }
