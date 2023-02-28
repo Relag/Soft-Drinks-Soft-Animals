@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] bookClips;
     public AudioClip[] animalClips;
     public AudioClip[] orderComplete;
+    public AudioClip menuPress;
     private bool musicOn = true;
     private bool sfxOn = true;
     
@@ -98,6 +99,7 @@ public class AudioManager : MonoBehaviour
 
     public void SFXOn() {
         sfxOn = true;
+        sfxSource.PlayOneShot(menuPress);
     }
 
     public void MusicOn() {
