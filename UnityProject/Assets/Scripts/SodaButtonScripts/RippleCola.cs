@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Soda2Script : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class RippleCola : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     bool ispressed = false;
     public GameManager manager;
+    public CupScript cup;
+    public GameObject Soda;
     public void OnPointerDown(PointerEventData eventData)
     {
         ispressed = true;
+        cup.ripplecola = true;
+        Soda.SetActive(true);
     }
     int count = 0;
     public void OnPointerUp(PointerEventData eventData)
     {
         ispressed = false;
+        Soda.SetActive(false);
+        cup.ripplecola = false;
     }
 
     private void Update()

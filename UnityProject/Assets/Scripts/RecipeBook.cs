@@ -7,12 +7,16 @@ using TMPro;
 public class RecipeBook : MonoBehaviour
 {
     public int page = 0;
-    private int MAX_PAGE = 0;
+    private int MAX_PAGE = 5;
 
     public TextMeshProUGUI LeftText;
     public TextMeshProUGUI RightText;
-    DrPepsiCola drPepsiCola = new DrPepsiCola();
-
+    DrCola drCola = new DrCola();
+    PlainSoda plainSoda = new PlainSoda();
+    SpritzyFruit spritzyFruit = new SpritzyFruit();
+    FieldsFavorite fieldsFavorite = new FieldsFavorite();
+    CheeryFloat cheeryFloat = new CheeryFloat();
+    EverythingCup everythingCup = new EverythingCup();
     void Update()
     {
         if (page < 0)
@@ -28,23 +32,34 @@ public class RecipeBook : MonoBehaviour
             switch (page)
             {
                 case 0:
-                    LeftText.text = drPepsiCola.getRecipe();
-                    RightText.text = drPepsiCola.getDescription();
+                    LeftText.text = plainSoda.getRecipe();
+                    RightText.text = plainSoda.getDescription();
                     break;
 
-/*
                 case 1:
-                    LeftText.text = Left1;
-                    RightText.text = Right1;
+                    LeftText.text = drCola.getRecipe();
+                    RightText.text = drCola.getDescription();
                     break;
                 case 2:
-                    LeftText.text = Left2;
-                    RightText.text = Right2;
+                    LeftText.text = spritzyFruit.getRecipe();
+                    RightText.text = spritzyFruit.getDescription();
                     break;
                 case 3:
-                    LeftText.text = Left3;
-                    RightText.text = Right3;
-                    break;*/
+                    LeftText.text = fieldsFavorite.getRecipe();
+                    RightText.text = fieldsFavorite.getDescription();
+                    break;
+                case 4:
+                    LeftText.text = cheeryFloat.getRecipe();
+                    RightText.text = cheeryFloat.getDescription();
+                    break;
+                case 5:
+                    LeftText.text = cheeryFloat.getRecipe();
+                    RightText.text = cheeryFloat.getDescription();
+                    break;
+                case 6:
+                    LeftText.text = everythingCup.getRecipe();
+                    RightText.text = everythingCup.getDescription();
+                    break;
             }  
         }
     }
