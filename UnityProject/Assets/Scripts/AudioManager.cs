@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] bookClips;
     public AudioClip[] animalClips;
     public AudioClip[] orderComplete;
-    private bool audioOn = true;
+    private bool musicOn = true;
     private bool sfxOn = true;
     
     // Singleton pattern to ensure only one AudioManager exists at the same time.
@@ -42,7 +42,7 @@ public class AudioManager : MonoBehaviour
     //2: Happy String
     //3: Sad String
     public void changeSong(int track) {
-        if (audioOn) {
+        if (musicOn) {
             if (track < musicClips.Length)
                 bgmSource.clip = musicClips[track];
             bgmSource.Play();
@@ -90,5 +90,24 @@ public class AudioManager : MonoBehaviour
 
     IEnumerator WaitForSeconds(float seconds) {
         yield return new WaitForSeconds(seconds);
+    }
+
+    public void SFXOff() {
+        sfxOn = false;
+    }
+
+    public void SFXOn() {
+        sfxOn = true;
+    }
+
+    public void MusicOn() {
+        bgmSource.clip = musicClips[0];
+        bgmSource.loop = true;
+        bgmSource.Play();
+    }
+
+    public void MusicOff() {
+        musicOn = false;
+        bgmSource.Stop();
     }
 }
