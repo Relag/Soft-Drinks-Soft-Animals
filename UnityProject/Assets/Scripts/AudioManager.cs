@@ -62,6 +62,7 @@ public class AudioManager : MonoBehaviour
     public void sodaSFX() {
         if (sfxOn) {
             sfxSource.PlayOneShot(sodaClips[0]);
+            WaitForSeconds(0.2f);
             sfxSource.PlayOneShot(sodaClips[Random.Range(1, sodaClips.Length)]);
         }
     }
@@ -77,5 +78,17 @@ public class AudioManager : MonoBehaviour
             else
                 sfxSource.PlayOneShot(orderComplete[1]);
         }
+    }
+
+    public void animalSFX() {
+        if (sfxOn) {
+            sfxSource.PlayOneShot(animalClips[0]);
+            WaitForSeconds(0.5f);
+            sfxSource.PlayOneShot(animalClips[Random.Range(1, animalClips.Length)]);
+        }
+    }
+
+    IEnumerator WaitForSeconds(float seconds) {
+        yield return new WaitForSeconds(seconds);
     }
 }
