@@ -1380,7 +1380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &815807248
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1490,7 +1490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmSource: {fileID: 815807248}
-  sfxSource: {fileID: 0}
+  sfxSource: {fileID: 815807248}
   musicClips:
   - {fileID: 8300000, guid: 014388e5d591d38469077e84dbd23acb, type: 3}
   - {fileID: 8300000, guid: 7fd96e5c0ac901c47b3ce66d54b35dae, type: 3}
@@ -1521,6 +1521,7 @@ MonoBehaviour:
   orderComplete:
   - {fileID: 8300000, guid: 33e9606e65aeddd449c739c361379397, type: 3}
   - {fileID: 8300000, guid: 50d1872a1c5ddd74ca11130ed7c4592e, type: 3}
+  menuPress: {fileID: 8300000, guid: 37dc58d85d1e04c49aa292edfd84fc30, type: 3}
 --- !u!4 &815807250
 Transform:
   m_ObjectHideFlags: 0
@@ -2398,7 +2399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1686133944
 RectTransform:
   m_ObjectHideFlags: 0
