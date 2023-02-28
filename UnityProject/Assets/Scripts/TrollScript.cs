@@ -45,6 +45,49 @@ public class TrollScript : MonoBehaviour
         trollScript.Add("What, the back button? You regret not pushing it earlier when you had the chance huh?");
         trollScript.Add("Well, don't let me stop ya. No one ever listens to me pour my heart out, why should you?");
         trollScript.Add("No, no, go on. I really don't mind. I just opened up to you is all. Nothing vulnerable about me, nosir.");
+        trollScript.Add("...");
+        trollScript.Add("...");
+        trollScript.Add("...");
+        trollScript.Add("...");
+        trollScript.Add("Okay, fine. You're clearly not goin' anywhere.");
+        trollScript.Add("You've become engrossed in my story. I get it. I'm a master orator after all.");
+        trollScript.Add("Now where was I? Oh yes, talking about my parents and videogames.");
+        trollScript.Add("They eventually did get me another console. A SNES. In 1998. ");
+        trollScript.Add("Sure, I might've been a little behind the times, but it was a heck of a lot better than the Game Gear, I'll tell you that.");
+        trollScript.Add("My favorite game for the system by far was Super Street Fighter 2. What a game, I tells ya.");
+        trollScript.Add("The love affair didn't last long though. My mother thought it was too violent, so she took it away.");
+        trollScript.Add("She said she would give it back to me when I was older. Well, I'm in my 20's now, and I'm still waiting.");
+        trollScript.Add("Oh, what could've been. I could've been the next Daigo had I but had the chance.");
+        trollScript.Add("Instead here I am. Barely able to input a dragon punch, can't hit confirm, can't kara throw. It's a sad state I tells ya.");
+        trollScript.Add("Anyways, I should let you get back to your game.");
+        trollScript.Add("After all, you could become the next Daigo of Soft Drink Server Simulators. I hear it's a growing genre.");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("Seriously, you gotta leave.");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("I'm serious, you'll go over the index range.");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("I guess I could script it so you can't go over the limit, but frankly I've lost count of how many times you clicked.");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("I think it's like, 70-something.");
+        trollScript.Add("Regardless, you gotta stop. Please. Push the back button.");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
+        trollScript.Add("");
         trollScript.Add("");
         trollScript.Add("");
     }
@@ -60,6 +103,12 @@ public class TrollScript : MonoBehaviour
             backButton.SetActive(false);
 
         if (lineNum == 21)
+            backButton.SetActive(true);
+
+        if (lineNum == 28)
+            backButton.SetActive(false);
+
+        if (lineNum == 38)
             backButton.SetActive(true);
     }
 }
