@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
     GameObject[] FlavorButtons;
     GameObject[] SodaButtons;
     GameObject[] Cup;
+    public GameObject NextCustomer;
     
     
 
@@ -111,6 +112,7 @@ public class GameManager : MonoBehaviour
 
     public void Checkdrink() //If you're reading this I know there's a better way but I'm lazy
     {
+        StopAllCoroutines();
 
         if (howbig != size)
         {
@@ -140,6 +142,7 @@ public class GameManager : MonoBehaviour
             OrderNumber += 1;
             EventManager();
         }
+        NextCustomer.SetActive(true);
     }
 
 
@@ -542,48 +545,48 @@ public class GameManager : MonoBehaviour
                 if(PassFail == true)
                 {
                     StartCoroutine(ShowText(1,OrderNumber,2));
-                    OrderSetter();
+                    
                 }
                 else
                 {
                     StartCoroutine(ShowText(1, OrderNumber, 3));
-                    OrderSetter();
+                    
                 }
                 break;
             case 2:
                 if (PassFail == true)
                 {
                     StartCoroutine(ShowText(2, OrderNumber, 5));
-                    OrderSetter();
+                   
                 }
                 else
                 {
                     StartCoroutine(ShowText(2, OrderNumber, 6));
-                    OrderSetter();
+                    
                 }
                 break;
             case 3:
                 if (PassFail == true)
                 {
                     StartCoroutine(ShowText(3, OrderNumber, 8));
-                    OrderSetter();
+                    
                 }
                 else
                 {
                     StartCoroutine(ShowText(3, OrderNumber, 9));
-                    OrderSetter();
+                   
                 }
                 break;
             case 4:
                 if (PassFail == true)
                 {
                     StartCoroutine(ShowText(4, OrderNumber, 11));
-                    OrderSetter();
+                    
                 }
                 else
                 {
                     StartCoroutine(ShowText(4, OrderNumber, 12));
-                    OrderSetter();
+                    
                 }
                 break;
             case 5:
