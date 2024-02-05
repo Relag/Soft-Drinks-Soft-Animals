@@ -17,50 +17,43 @@ public class RecipeBook : MonoBehaviour
     FieldsFavorite fieldsFavorite = new FieldsFavorite();
     CheeryFloat cheeryFloat = new CheeryFloat();
     EverythingCup everythingCup = new EverythingCup();
-    void Update()
-    {
-        if (page < 0)
-        {
-            page = 0;
-        }
-        else if (page > MAX_PAGE)
-        {
-            page = MAX_PAGE;
-        }
-        else
-        {
-            switch (page)
-            {
-                case 0:
-                    LeftText.text = plainSoda.getRecipe();
-                    RightText.text = plainSoda.getDescription();
-                    break;
 
-                case 1:
-                    LeftText.text = drCola.getRecipe();
-                    RightText.text = drCola.getDescription();
-                    break;
-                case 2:
-                    LeftText.text = spritzyFruit.getRecipe();
-                    RightText.text = spritzyFruit.getDescription();
-                    break;
-                case 3:
-                    LeftText.text = fieldsFavorite.getRecipe();
-                    RightText.text = fieldsFavorite.getDescription();
-                    break;
-                case 4:
-                    LeftText.text = cheeryFloat.getRecipe();
-                    RightText.text = cheeryFloat.getDescription();
-                    break;
-                case 5:
-                    LeftText.text = cheeryFloat.getRecipe();
-                    RightText.text = cheeryFloat.getDescription();
-                    break;
-                case 6:
-                    LeftText.text = everythingCup.getRecipe();
-                    RightText.text = everythingCup.getDescription();
-                    break;
-            }  
+    private void Start()
+    {
+        NewPage();
+    }
+
+    void NewPage()
+    {
+        
+        switch (page)
+        {
+            case 0:
+                LeftText.text = plainSoda.getRecipe();
+                RightText.text = plainSoda.getDescription();
+                break;
+
+            case 1:
+                LeftText.text = drCola.getRecipe();
+                RightText.text = drCola.getDescription();
+                break;
+            case 2:
+                LeftText.text = spritzyFruit.getRecipe();
+                RightText.text = spritzyFruit.getDescription();
+                break;
+            case 3:
+                LeftText.text = fieldsFavorite.getRecipe();
+                RightText.text = fieldsFavorite.getDescription();
+                break;
+            case 4:
+                LeftText.text = cheeryFloat.getRecipe();
+                RightText.text = cheeryFloat.getDescription();
+                break;
+            case 5:
+                LeftText.text = everythingCup.getRecipe();
+                RightText.text = everythingCup.getDescription();
+                break;
+             
         }
     }
 
@@ -70,6 +63,7 @@ public class RecipeBook : MonoBehaviour
         {
             page += 1;
         }
+        NewPage();
     }
     public void PageBack()
     {
@@ -77,6 +71,7 @@ public class RecipeBook : MonoBehaviour
         {
             page -= 1;
         }
+        NewPage();
     }
 
 
