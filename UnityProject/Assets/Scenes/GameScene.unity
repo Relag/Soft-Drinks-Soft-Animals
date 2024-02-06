@@ -261,6 +261,8 @@ MonoBehaviour:
   manager: {fileID: 1680700688}
   cup: {fileID: 1225226879}
   Soda: {fileID: 528971891}
+  filled: 0
+  fillRate: 8
 --- !u!1 &44508888
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +704,8 @@ MonoBehaviour:
   manager: {fileID: 1680700688}
   cup: {fileID: 1225226879}
   Soda: {fileID: 1385301791}
+  fillRate: 8
+  filled: 0
 --- !u!1 &97239261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,7 +1720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &482161000
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2525,7 +2529,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1680700688}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: HideCup
+        m_MethodName: TrashDrink
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2535,7 +2539,43 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 80638546}
+        m_TargetAssemblyTypeName: RippleCola, Assembly-CSharp
+        m_MethodName: ResetFill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1376504838}
+        m_TargetAssemblyTypeName: HoneyFizz, Assembly-CSharp
+        m_MethodName: ResetFill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 34614765}
+        m_TargetAssemblyTypeName: BirchBeer, Assembly-CSharp
+        m_MethodName: ResetFill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1965090014}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2546,6 +2586,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1225226877}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &897672583
 MonoBehaviour:
@@ -3644,6 +3696,8 @@ MonoBehaviour:
   manager: {fileID: 1680700688}
   cup: {fileID: 1225226879}
   Soda: {fileID: 1136577704}
+  fillRate: 8
+  filled: 0
 --- !u!1 &1385301791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4256,7 +4310,6 @@ MonoBehaviour:
   Felix: {fileID: 21300000, guid: de6f33956705375498b97c0baa482cd5, type: 3}
   Rosco: {fileID: 21300000, guid: 9338be35b8fc4544e98a21402de6cc22, type: 3}
   txt: {fileID: 1684335129}
-  delay: 0.1
   BenjaminD:
   - "Howdy! You must be Dora\u2019s kid\u2014you look just like her. I\u2019m Benjamin
     Bearenthal, but you can call me Benny. Oh, I guess you\u2019ll be needing my
