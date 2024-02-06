@@ -54,8 +54,6 @@ public class GameManager : MonoBehaviour
     GameObject[] SodaButtons;
     GameObject[] Cup;
     public GameObject NextCustomer;
-    
-    
 
     private void Start()
     {
@@ -470,7 +468,7 @@ public class GameManager : MonoBehaviour
         cherryFlavouring = false;
         strawberryFlavouring = false;
         grapeFlavouring = false;
-        howbig = cup.large;
+        howbig = cup.medium;
     }
     void FieldsFavorite()
     {
@@ -607,7 +605,6 @@ public class GameManager : MonoBehaviour
     
 
     public Text txt;
-    public float delay = 0.1f;
     private string currentText = "";
 
 
@@ -1039,7 +1036,7 @@ public class GameManager : MonoBehaviour
             hold = true;
             currentText = fullText.Substring(0, i);
             txt.text = currentText;
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForEndOfFrame();
             hold = false;
         }
 
