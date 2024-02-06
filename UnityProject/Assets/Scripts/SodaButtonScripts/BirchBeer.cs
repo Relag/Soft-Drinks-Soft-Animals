@@ -9,6 +9,8 @@ public class BirchBeer : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameManager manager;
     public CupScript cup;
     public GameObject Soda;
+    public float filled = 0f;
+    public float fillRate = 5f;
     public void OnPointerDown(PointerEventData eventData)
     {
         ispressed = true;
@@ -25,19 +27,15 @@ public class BirchBeer : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Update()
     {
-        if (manager.size != GameManager.cup.none && ((manager.soda1 + manager.soda2 + manager.soda3) < 100))
-        {
-            if (ispressed && count >= 10)
+        if (ispressed)
+            if (manager.size != GameManager.cup.none && ((manager.soda1 + manager.soda2 + manager.soda3) < 100))
             {
-                manager.soda3 += 1;
-                count = 0;
+                filled += fillRate * Time.deltaTime;
+                manager.soda3 = (int)filled;
             }
-            else
-            {
-                count += 1;
-            }
-        }
-
     }
-    // Update is called once per frame
+    public void ResetFill()
+    {
+        filled = 0f;
+    }
 }

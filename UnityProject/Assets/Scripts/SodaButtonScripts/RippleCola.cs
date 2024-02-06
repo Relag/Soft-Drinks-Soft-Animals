@@ -9,13 +9,16 @@ public class RippleCola : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameManager manager;
     public CupScript cup;
     public GameObject Soda;
+    public float fillRate = 5f;
+    public float filled = 0f;
+
     public void OnPointerDown(PointerEventData eventData)
     {
-        ispressed = true;
         cup.ripplecola = true;
         Soda.SetActive(true);
+        ispressed = true;
     }
-    int count = 0;
+    
     public void OnPointerUp(PointerEventData eventData)
     {
         ispressed = false;
@@ -25,19 +28,16 @@ public class RippleCola : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Update()
     {
-        if (manager.size != GameManager.cup.none && ((manager.soda1 + manager.soda2 + manager.soda3) < 100))
-        {
-            if (ispressed && count >= 10)
+        if (ispressed)
+            if (manager.size != GameManager.cup.none && ((manager.soda1 + manager.soda2 + manager.soda3) < 100))
             {
-                manager.soda2 += 1;
-                count = 0;
+                filled += fillRate * Time.deltaTime;
+                manager.soda2 = (int)filled;
             }
-            else
-            {
-                count += 1;
-            }
-        }
-
     }
-    // Update is called once per frame
+
+    public void ResetFill()
+    {
+        filled = 0f;
+    }
 }
