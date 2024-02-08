@@ -5,20 +5,30 @@ using UnityEngine;
 public class Drink {
     protected int HoneyFizz;
     protected int RippleCola;
-    protected int ButtonBirchBeer;
+    protected int BirchBeer;
     protected bool grapeFlavouring;
     protected bool cherryFlavouring;
     protected bool strawberryFlavouring;
     protected string name;
     protected string description;
 
+    public Drink(int honeyFizz, int rippleCola, int birchBeer, bool grape,
+        bool cherry, bool strawberry, int size) {
+        this.HoneyFizz = honeyFizz;
+        this.RippleCola = rippleCola;
+        this.BirchBeer = birchBeer;
+        grapeFlavouring = grape;
+        cherryFlavouring = cherry;
+        strawberryFlavouring = strawberry;
+        SetSize(size);
+    }
 
     protected enum SIZE
     {
         small, medium, large
     };
 
-    SIZE size;
+    protected SIZE size;
 
     public bool IsAccurate(Drink preparedDrink) {
         if (size != preparedDrink.size)
@@ -30,7 +40,7 @@ public class Drink {
         if (strawberryFlavouring != preparedDrink.strawberryFlavouring)
             return false;
         if (RippleCola > (preparedDrink.RippleCola + 5) || RippleCola < (preparedDrink.RippleCola - 5) || (HoneyFizz > (preparedDrink.HoneyFizz + 5) || HoneyFizz < (HoneyFizz - 5))
-            || (ButtonBirchBeer > (preparedDrink.ButtonBirchBeer + 5) || ButtonBirchBeer < (preparedDrink.ButtonBirchBeer - 5)))
+            || (BirchBeer > (preparedDrink.BirchBeer + 5) || BirchBeer < (preparedDrink.BirchBeer - 5)))
             return false;
 
         return true;
@@ -50,7 +60,7 @@ public class Drink {
         else
         {
             string returnString = name;
-            returnString += "\nPepsi %" + HoneyFizz + "\nCoke %" + RippleCola + "\nRoot Beer %" + ButtonBirchBeer;
+            returnString += "\nPepsi %" + HoneyFizz + "\nCoke %" + RippleCola + "\nRoot Beer %" + BirchBeer;
 
             if (grapeFlavouring)
                 returnString += "\nAdd Grape Shot";
@@ -61,5 +71,13 @@ public class Drink {
 
             return returnString;
         }
+    }
+
+    public void SetSize(int newSize)
+    {
+        if (newSize < 3 && newSize >= 0)
+            size = (SIZE)newSize;
+        else
+            size = SIZE.small;
     }
 }
