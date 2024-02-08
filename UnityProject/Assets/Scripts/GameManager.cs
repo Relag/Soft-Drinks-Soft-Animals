@@ -1085,7 +1085,7 @@ public class GameManager : MonoBehaviour
 
     public string[] JamesD = new string[]
     {
-        "a","Hey! I heard there was a new person in town. I’m James—you can call me JJ—and that was Gibson. Don’t mind him, his thesis is draining all the stuffing out of him. He’s usually more—well, actually, he’s pretty much always like this. Can I get a small grape root beer?",
+        "a","Hey! I heard there was a new person in town. I’m James—you can call me JJ—and that was Gibson. Don’t mind him, his thesis is draining all the stuffing out of him. He’s usually more—well, actually, he’s pretty much always like this. Can I get a small grape birch beer?",
         "Thanks! Come on, Gib, let’s sit down before you fall over.",
         "Uh, that is...not how I remembered it tasting. Oh, well. Still good. Gib, let’s sit down before you fall over.",
         "Hey, could I get a grape soda, please? And I’ll cover Gibson.",
