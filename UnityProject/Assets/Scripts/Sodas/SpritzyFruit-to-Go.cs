@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpritzyFruit : Drink
 {
-    public SpritzyFruit()
+    public SpritzyFruit(int size)
     {
         HoneyFizz = 100;
         RippleCola = 0;
@@ -14,5 +14,6 @@ public class SpritzyFruit : Drink
         grapeFlavouring = false;
         name = "Spritzy Fruit-to-go";
         description = "Lots of sugar. Perfect for studying, unless you spill it on your notes.\n\nThis was always your mom’s favorite.\n—Aunt Dora";
+        SetSize(size);
     }
 }
