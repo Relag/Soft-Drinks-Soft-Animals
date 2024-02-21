@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Avery : Customer
 {
-    Avery() {
+    public Avery() {
         name = "Avery";
         customerDrink = new FieldsFavorite(2);
     }
