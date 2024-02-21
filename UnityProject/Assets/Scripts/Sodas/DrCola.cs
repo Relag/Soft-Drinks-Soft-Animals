@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DrCola : Drink
 {
-    public DrCola(int size) {
+    public DrCola(int size = 0) {
         HoneyFizz = 25;
         RippleCola = 25;
-        ButtonBirchBeer = 50;
+        BirchBeer = 50;
         cherryFlavouring = false;
         strawberryFlavouring = false;
         grapeFlavouring = false;

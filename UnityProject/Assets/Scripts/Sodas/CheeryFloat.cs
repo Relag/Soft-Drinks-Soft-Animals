@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CheeryFloat : Drink
 {
-    public CheeryFloat(int size)
+    public CheeryFloat(int size = 0)
     {
         HoneyFizz = 25;
         RippleCola = 75;
-        ButtonBirchBeer = 0;
+        BirchBeer = 0;
         cherryFlavouring = true;
         strawberryFlavouring = false;
         grapeFlavouring = false;

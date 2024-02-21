@@ -23,6 +23,8 @@ public class Drink {
         SetSize(size);
     }
 
+    public Drink() { }
+
     protected enum SIZE
     {
         small, medium, large

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EverythingCup : Drink
 {
-    public EverythingCup(int size)
+    public EverythingCup(int size = 0)
     {
         HoneyFizz = 25;
         RippleCola = 25;
-        ButtonBirchBeer = 50;
+        BirchBeer = 50;
         cherryFlavouring = true;
         strawberryFlavouring = true;
         grapeFlavouring = true;

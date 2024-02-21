@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SpritzyFruit : Drink
 {
-    public SpritzyFruit(int size)
+    public SpritzyFruit(int size = 0)
     {
         HoneyFizz = 100;
         RippleCola = 0;
-        ButtonBirchBeer = 0;
+        BirchBeer = 0;
         cherryFlavouring = false;
         strawberryFlavouring = true;
         grapeFlavouring = false;

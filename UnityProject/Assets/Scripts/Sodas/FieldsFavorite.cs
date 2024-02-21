@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FieldsFavorite: Drink
 {
-    public FieldsFavorite(int size)
+    public FieldsFavorite(int size = 0)
     {
         HoneyFizz = 0;
         RippleCola = 50;
-        ButtonBirchBeer = 50;
+        BirchBeer = 50;
         cherryFlavouring = false;
         strawberryFlavouring = true;
         grapeFlavouring = true;
