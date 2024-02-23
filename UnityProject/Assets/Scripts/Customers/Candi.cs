@@ -6,6 +6,6 @@ public class Candi : Customer
 {
     public Candi() {
         name = "Candi";
-        customerDrink = new CheeryFloat(1);
+        customerDrink = new SpritzyFruit(1);
     }
 }
