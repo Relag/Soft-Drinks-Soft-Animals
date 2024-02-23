@@ -26,15 +26,15 @@ public class GameManager : MonoBehaviour
     };
 
     //Set these values at start of level and after each success or fail
-    public int HoneyFizz;
+   /* public int HoneyFizz;
     public int RippleCola;
     public int BirchBeer;
     public bool cherryFlavouring;
     public bool strawberryFlavouring;
     public bool grapeFlavouring;
     public cup howbig;
-
-
+   */
+   Customer currentCustomer = new Customer();
     public cup size;
     //Sodas
     public int soda1 = 0;
@@ -68,14 +68,15 @@ public class GameManager : MonoBehaviour
 
     public void init()
     {
-        HoneyFizz = 0;
+        /*HoneyFizz = 0;
         RippleCola = 0;
         BirchBeer = 0;
         cherryFlavouring = false;
         strawberryFlavouring = false;
         grapeFlavouring = false;
         howbig = cup.medium;
-
+        */
+        currentCustomer = new Benjamin();
 
 
         size = cup.none;
@@ -104,7 +105,8 @@ public class GameManager : MonoBehaviour
         {
             item.SetActive(false);
         }
-        OrderSetter();
+        // OrderSetter();
+        ChangeOrderDay1();
 
     }
 
@@ -112,7 +114,14 @@ public class GameManager : MonoBehaviour
     {
         StopAllCoroutines();
 
-        if (howbig != size)
+        Drink drinkAttempt = new Drink(soda1, soda2, soda3, flavor1, flavor2, flavor3, (int)size);
+
+        PassFail = drinkAttempt.IsAccurate(currentCustomer.GetDrink());
+        OrderNumber += 1;
+
+        EventManager();
+
+       /* if (currentCustomer.GetDrink() != size)
         {
             PassFail = false;
 
@@ -139,12 +148,12 @@ public class GameManager : MonoBehaviour
 
             OrderNumber += 1;
             EventManager();
-        }
+        }*/
         NextCustomer.SetActive(true);
     }
 
 
-    public void Small()
+    /*public void Small()
     {
         size = cup.small;
     }
@@ -155,7 +164,7 @@ public class GameManager : MonoBehaviour
     public void Large()
     {
         size = cup.large;
-    }
+    }*/
 
     public void Flavor1()
     {
@@ -169,7 +178,7 @@ public class GameManager : MonoBehaviour
     {
         flavor3 = true;
     }
-
+    
 
 
 
@@ -215,42 +224,42 @@ public class GameManager : MonoBehaviour
         switch (OrderNumber)
         {
             case 1:
-                PlainSoda();//Bear 1
+            currentCustomer = new Benjamin();
                 m_Image.sprite = Benjamin;
                 StartCoroutine(ShowText(1, 1, 1));
                 break;
             case 2:
-                CheeryFloat();//Candi 6
+            currentCustomer = new Candi();//Candi 6
                 m_Image.sprite = Candy;
                 StopAllCoroutines();
                 StartCoroutine(ShowText(1, 6, 1));
                 break;
             case 3:
-                DrCola();//Felix 5
+            currentCustomer = new James();//Felix 5
                 m_Image.sprite = Felix;
                 StopAllCoroutines();
                 StartCoroutine(ShowText(1, 5, 1));
                 break;
             case 4:
-                EverythingCup();//Goat 2
+            currentCustomer = new Gibson();//Goat 2
                 m_Image.sprite = Gibson;
                 StopAllCoroutines();
                 StartCoroutine(ShowText(1, 2, 1));
                 break;
             case 5:
-                FieldsFavorite();//Dog 3
+            currentCustomer = new Felix();//Dog 3
                 m_Image.sprite = JJ;
                 StopAllCoroutines();
                 StartCoroutine(ShowText(1, 3, 1));
                 break;
             case 6:
-                SpritzyFruit();//Rosco 4
+            currentCustomer = new Rosco();//Rosco 4
                 m_Image.sprite = Rosco;
                 StopAllCoroutines();
                 StartCoroutine(ShowText(1, 4, 1));
                 break;
             case 7:
-                FieldsFavorite();//Avery 7
+            currentCustomer = new Avery(); ;//Avery 7
                 m_Image.sprite = Avery;
                 StopAllCoroutines();
                 StartCoroutine(ShowText(1, 7, 1));
@@ -258,7 +267,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-    public void ChangeOrderDay2()
+   /* public void ChangeOrderDay2()
     {
         switch (OrderNumber)
         {
@@ -430,6 +439,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+   */
 
 
 
@@ -439,8 +449,7 @@ public class GameManager : MonoBehaviour
 
 
 
-
-    void CheeryFloat()
+  /*  void CheeryFloat()
     {
         HoneyFizz = 25;
         RippleCola = 75;
@@ -500,10 +509,10 @@ public class GameManager : MonoBehaviour
         grapeFlavouring = false;
         howbig = cup.large;
     }
-
+  */
     public int OrderNumber = 1;
     int dayCount = 1;
-    public void OrderSetter()
+    /*public void OrderSetter()
     {
         switch (dayCount)
         {
@@ -523,7 +532,7 @@ public class GameManager : MonoBehaviour
                 ChangeOrderDay5();
                 break;
         }
-    }
+    }*/
 
     public Sprite Benjamin;
     public Sprite Gibson;
@@ -587,7 +596,7 @@ public class GameManager : MonoBehaviour
                     
                 }
                 break;
-            case 5:
+            /*case 5:
                 if (PassFail == true)
                 {
                     StartCoroutine(ShowText(5, OrderNumber, 14));
@@ -598,7 +607,7 @@ public class GameManager : MonoBehaviour
                     StartCoroutine(ShowText(5, OrderNumber, 15));
                     OrderSetter();
                 }
-                break;
+                break;*/
         }
     }
 
@@ -1142,7 +1151,7 @@ public class GameManager : MonoBehaviour
 
     public string[] CandiD = new string[]
         {
-           "a", "Hi there! How’s it going? Good, good! My day’s been great. I will have the Medium Cheery Float to go please. I’m in a little bit of a rush! Thank you!",
+           "a", "Hi there! How’s it going? Good, good! My day’s been great. I will have the Medium Spritzy Fruit to go please. I’m in a little bit of a rush! Thank you!",
             "Great! Thanks, be sure to follow me!",
             "Uhhh…hehe, no this is great. I love it, don’t sweat it…too much.",
             "Yoohoo! I’m back! Just got done with such an intense workout, so, need to hydrate! Whatcha got for me? Hmmm, I’ll just take the Cheery Float again, that should be easy for you right?!",

@@ -1787,7 +1787,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1680700688}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OrderSetter
+        m_MethodName: ChangeOrderDay1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4283,13 +4283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9730f77263b8f1040afe52051989a73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoneyFizz: 0
-  RippleCola: 0
-  BirchBeer: 0
-  cherryFlavouring: 0
-  strawberryFlavouring: 0
-  grapeFlavouring: 0
-  howbig: 0
   size: 3
   soda1: 0
   soda2: 0
