@@ -17,4 +17,8 @@ public class Customer {
         speech = whatDay[response];
         return speech;
     }
+
+    public Drink GetDrink() {
+        return customerDrink;
+    }
 }

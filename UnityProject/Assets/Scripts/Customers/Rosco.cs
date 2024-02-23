@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rosco : Customer
 {
-    Rosco() {
+    public Rosco() {
         name = "Rosco";
         customerDrink = new SpritzyFruit(1);
     }
