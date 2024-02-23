@@ -7,5 +7,6 @@ public class Candi : Customer
     public Candi() {
         name = "Candi";
         customerDrink = new SpritzyFruit(1);
+        customerSprite = Resources.Load<Sprite>("Art/Candi_Cat");
     }
 }

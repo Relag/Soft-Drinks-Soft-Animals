@@ -21,4 +21,8 @@ public class Customer {
     public Drink GetDrink() {
         return customerDrink;
     }
+
+    public Sprite GetSprite() {
+        return customerSprite;
+    }
 }

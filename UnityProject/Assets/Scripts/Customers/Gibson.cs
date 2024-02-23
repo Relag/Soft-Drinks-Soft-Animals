@@ -6,5 +6,6 @@ public class Gibson : Customer {
     public Gibson() {
         name = "Gibson";
         customerDrink = new EverythingCup(2);
+        customerSprite = Resources.Load<Sprite>("Art/Gibson_Goat");
     }
 }
