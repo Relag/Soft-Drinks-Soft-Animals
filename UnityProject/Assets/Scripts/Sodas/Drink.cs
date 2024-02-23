@@ -62,7 +62,7 @@ public class Drink {
         else
         {
             string returnString = name;
-            returnString += "\nPepsi %" + HoneyFizz + "\nCoke %" + RippleCola + "\nRoot Beer %" + BirchBeer;
+            returnString += "\nHoney Fizz %" + HoneyFizz + "\nRiple Cola %" + RippleCola + "\nBirch Beer %" + BirchBeer;
 
             if (grapeFlavouring)
                 returnString += "\nAdd Grape Shot";
