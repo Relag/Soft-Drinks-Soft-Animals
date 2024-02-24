@@ -9,4 +9,8 @@ public class Rosco : Customer
         customerDrink = new SpritzyFruit(1);
         customerSprite = Resources.Load<Sprite>("Art/Rosco_Raccoon");
     }
+
+    protected override void SetDialogue() {
+        throw new System.NotImplementedException();
+    }
 }

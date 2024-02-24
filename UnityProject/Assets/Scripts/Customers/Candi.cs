@@ -9,4 +9,7 @@ public class Candi : Customer
         customerDrink = new SpritzyFruit(1);
         customerSprite = Resources.Load<Sprite>("Art/Candi_Cat");
     }
+    protected override void SetDialogue() {
+        throw new System.NotImplementedException();
+    }
 }

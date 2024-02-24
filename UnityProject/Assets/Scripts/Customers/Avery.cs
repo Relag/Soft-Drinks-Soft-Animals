@@ -8,4 +8,8 @@ public class Avery : Customer
         name = "Avery";
         customerDrink = new FieldsFavorite(2);
     }
+
+    protected override void SetDialogue() {
+        throw new System.NotImplementedException();
+    }
 }

@@ -8,4 +8,7 @@ public class James : Customer {
         customerDrink = new Drink(0, 0, 100, true, false, false, 0);
         customerSprite = Resources.Load<Sprite>("Art/JJ_Terrier");
     }
+    protected override void SetDialogue() {
+        throw new System.NotImplementedException();
+    }
 }

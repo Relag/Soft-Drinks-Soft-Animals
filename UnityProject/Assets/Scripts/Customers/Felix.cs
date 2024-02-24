@@ -9,4 +9,8 @@ public class Felix : Customer
         customerDrink = new DrCola(0);
         customerSprite = Resources.Load<Sprite>("Art/Felix_Fisher");
     }
+
+    protected override void SetDialogue() {
+        throw new System.NotImplementedException();
+    }
 }
