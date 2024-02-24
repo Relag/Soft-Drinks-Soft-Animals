@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
     public bool grapeFlavouring;
     public cup howbig;
    */
-   Customer currentCustomer = new Customer();
+   Customer currentCustomer;
     public cup size;
     //Sodas
     public int soda1 = 0;
@@ -225,44 +226,44 @@ public class GameManager : MonoBehaviour
         {
             case 1:
             currentCustomer = new Benjamin();
-                m_Image.sprite = Benjamin;
-                StartCoroutine(ShowText(1, 1, 1));
+            m_Image.sprite = currentCustomer.GetSprite();
+                StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
                 break;
             case 2:
             currentCustomer = new Candi();//Candi 6
                 m_Image.sprite = Candy;
                 StopAllCoroutines();
-                StartCoroutine(ShowText(1, 6, 1));
+                StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
                 break;
             case 3:
             currentCustomer = new James();//Felix 5
                 m_Image.sprite = Felix;
                 StopAllCoroutines();
-                StartCoroutine(ShowText(1, 5, 1));
+                StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
                 break;
             case 4:
             currentCustomer = new Gibson();//Goat 2
                 m_Image.sprite = Gibson;
                 StopAllCoroutines();
-                StartCoroutine(ShowText(1, 2, 1));
+                StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
                 break;
             case 5:
             currentCustomer = new Felix();//Dog 3
                 m_Image.sprite = JJ;
                 StopAllCoroutines();
-                StartCoroutine(ShowText(1, 3, 1));
+                StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
                 break;
             case 6:
             currentCustomer = new Rosco();//Rosco 4
                 m_Image.sprite = Rosco;
                 StopAllCoroutines();
-                StartCoroutine(ShowText(1, 4, 1));
+                StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
                 break;
             case 7:
             currentCustomer = new Avery(); ;//Avery 7
                 m_Image.sprite = Avery;
                 StopAllCoroutines();
-                StartCoroutine(ShowText(1, 7, 1));
+                StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
                 dayCount++;
                 break;
         }
@@ -546,7 +547,7 @@ public class GameManager : MonoBehaviour
     //ShowText(int day, int animal, int response)
     public void EventManager()
     {
-        switch (dayCount)
+        /*switch (dayCount)
         {
             case 1:
                 if(PassFail == true)
@@ -607,8 +608,10 @@ public class GameManager : MonoBehaviour
                     StartCoroutine(ShowText(5, OrderNumber, 15));
                     OrderSetter();
                 }
-                break;*/
-        }
+                break;
+        }*/
+
+        StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount, Convert.ToInt32(PassFail))));
     }
 
     
@@ -619,425 +622,433 @@ public class GameManager : MonoBehaviour
 
     //StartCoroutine(ShowText());
 
-    public IEnumerator ShowText(int day, int animal, int response)
+    public IEnumerator ShowText(string fullText)
     {
-        string fullText = "";
-        switch (response)
-        {
-            case 1:
-                if (day == 1)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[0];
-                            break;
-                        case 2:
-                            fullText = CandiD[0];
-                            break;
-                        case 3:
-                            fullText = FelixD[0];
-                            break;
-                        case 4:
-                            fullText = GibsonD[0];
-                            break;
-                        case 5:
-                            fullText = JamesD[0];
-                            break;
-                        case 6:
-                            fullText = RoscoD[0];
-                            break;
-                        case 7:
-                            fullText = AveryD[0];
-                            break;
-                    }
-                }
-                if (day == 2)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[3];
-                            break;
-                        case 2:
-                            fullText = AveryD[3];
-                            break;
-                        case 3:
-                            fullText = RoscoD[3];
-                            break;
-                        case 4:
-                            fullText = GibsonD[3];
-                            break;
-                        case 5:
-                            fullText = JamesD[3];
-                            break;
-                        case 6:
-                            fullText = FelixD[3];
-                            break;
-                        case 7:
-                            fullText = CandiD[3];
-                            break;
-                    }
-                }
-                if (day == 3)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[6];
-                            break;
-                        case 2:
-                            fullText = FelixD[6];
-                            break;
-                        case 3:
-                            fullText = CandiD[6];
-                            break;
-                        case 4:
-                            fullText = GibsonD[6];
-                            break;
-                        case 5:
-                            fullText = JamesD[6];
-                            break;
-                        case 6:
-                            fullText = AveryD[6];
-                            break;
-                        case 7:
-                            fullText = RoscoD[6];
-                            break;
-                    }
-                }
-                if (day == 4)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[9];
-                            break;
-                        case 2:
-                            fullText = AveryD[9];
-                            break;
-                        case 3:
-                            fullText = RoscoD[9];
-                            break;
-                        case 4:
-                            fullText = GibsonD[9];
-                            break;
-                        case 5:
-                            fullText = JamesD[9];
-                            break;
-                        case 6:
-                            fullText = CandiD[9];
-                            break;
-                        case 7:
-                            fullText = FelixD[9];
-                            break;
-                    }
-                }
-                if (day == 5)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[12];
-                            break;
-                        case 2:
-                            fullText = CandiD[12];
-                            break;
-                        case 3:
-                            fullText = AveryD[12];
-                            break;
-                        case 4:
-                            fullText = GibsonD[12];
-                            break;
-                        case 5:
-                            fullText = JamesD[12];
-                            break;
-                        case 6:
-                            fullText = RoscoD[12];
-                            break;
-                        case 7:
-                            fullText = FelixD[12];
-                            break;
-                    }
-                }
-                break;
-            case 2:
-                if (day == 1)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[1];
-                            break;
-                        case 2:
-                            fullText = CandiD[1];
-                            break;
-                        case 3:
-                            fullText = FelixD[1];
-                            break;
-                        case 4:
-                            fullText = GibsonD[1];
-                            break;
-                        case 5:
-                            fullText = JamesD[1];
-                            break;
-                        case 6:
-                            fullText = RoscoD[1];
-                            break;
-                        case 7:
-                            fullText = AveryD[1];
-                            break;
-                    }
-                }
-                if (day == 2)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[4];
-                            break;
-                        case 2:
-                            fullText = AveryD[4];
-                            break;
-                        case 3:
-                            fullText = RoscoD[4];
-                            break;
-                        case 4:
-                            fullText = GibsonD[4];
-                            break;
-                        case 5:
-                            fullText = JamesD[4];
-                            break;
-                        case 6:
-                            fullText = FelixD[4];
-                            break;
-                        case 7:
-                            fullText = CandiD[4];
-                            break;
-                    }
-                }
-                if (day == 3)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[7];
-                            break;
-                        case 2:
-                            fullText = FelixD[7];
-                            break;
-                        case 3:
-                            fullText = CandiD[7];
-                            break;
-                        case 4:
-                            fullText = GibsonD[7];
-                            break;
-                        case 5:
-                            fullText = JamesD[7];
-                            break;
-                        case 6:
-                            fullText = AveryD[7];
-                            break;
-                        case 7:
-                            fullText = RoscoD[7];
-                            break;
-                    }
-                }
-                if (day == 4)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[10];
-                            break;
-                        case 2:
-                            fullText = AveryD[10];
-                            break;
-                        case 3:
-                            fullText = RoscoD[10];
-                            break;
-                        case 4:
-                            fullText = GibsonD[10];
-                            break;
-                        case 5:
-                            fullText = JamesD[10];
-                            break;
-                        case 6:
-                            fullText = CandiD[10];
-                            break;
-                        case 7:
-                            fullText = FelixD[10];
-                            break;
-                    }
-                }
-                if (day == 5)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[13];
-                            break;
-                        case 2:
-                            fullText = CandiD[13];
-                            break;
-                        case 3:
-                            fullText = AveryD[13];
-                            break;
-                        case 4:
-                            fullText = GibsonD[13];
-                            break;
-                        case 5:
-                            fullText = JamesD[13];
-                            break;
-                        case 6:
-                            fullText = RoscoD[13];
-                            break;
-                        case 7:
-                            fullText = FelixD[13];
-                            break;
-                    }
-                }
-                break;
-            case 3:
-                if (day == 1)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[2];
-                            break;
-                        case 2:
-                            fullText = CandiD[2];
-                            break;
-                        case 3:
-                            fullText = FelixD[2];
-                            break;
-                        case 4:
-                            fullText = GibsonD[2];
-                            break;
-                        case 5:
-                            fullText = JamesD[2];
-                            break;
-                        case 6:
-                            fullText = RoscoD[2];
-                            break;
-                        case 7:
-                            fullText = AveryD[2];
-                            break;
-                    }
-                }
-                if (day == 2)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[5];
-                            break;
-                        case 2:
-                            fullText = AveryD[5];
-                            break;
-                        case 3:
-                            fullText = RoscoD[5];
-                            break;
-                        case 4:
-                            fullText = GibsonD[5];
-                            break;
-                        case 5:
-                            fullText = JamesD[5];
-                            break;
-                        case 6:
-                            fullText = FelixD[5];
-                            break;
-                        case 7:
-                            fullText = CandiD[5];
-                            break;
-                    }
-                }
-                if (day == 3)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[8];
-                            break;
-                        case 2:
-                            fullText = FelixD[8];
-                            break;
-                        case 3:
-                            fullText = CandiD[8];
-                            break;
-                        case 4:
-                            fullText = GibsonD[8];
-                            break;
-                        case 5:
-                            fullText = JamesD[8];
-                            break;
-                        case 6:
-                            fullText = AveryD[8];
-                            break;
-                        case 7:
-                            fullText = RoscoD[8];
-                            break;
-                    }
-                }
-                if (day == 4)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[11];
-                            break;
-                        case 2:
-                            fullText = AveryD[11];
-                            break;
-                        case 3:
-                            fullText = RoscoD[11];
-                            break;
-                        case 4:
-                            fullText = GibsonD[11];
-                            break;
-                        case 5:
-                            fullText = JamesD[11];
-                            break;
-                        case 6:
-                            fullText = CandiD[11];
-                            break;
-                        case 7:
-                            fullText = FelixD[11];
-                            break;
-                    }
-                }
-                if (day == 5)
-                {
-                    switch (animal)
-                    {
-                        case 1:
-                            fullText = BenjaminD[14];
-                            break;
-                        case 2:
-                            fullText = CandiD[14];
-                            break;
-                        case 3:
-                            fullText = AveryD[14];
-                            break;
-                        case 4:
-                            fullText = GibsonD[14];
-                            break;
-                        case 5:
-                            fullText = JamesD[14];
-                            break;
-                        case 6:
-                            fullText = RoscoD[14];
-                            break;
-                        case 7:
-                            fullText = FelixD[14];
-                            break;
-                    }
-                }
-                break;
+        //string fullText = "";
 
-
+        for (int i = 0; i <= fullText.Length; i++) {
+            hold = true;
+            currentText = fullText.Substring(0, i);
+            txt.text = currentText;
+            yield return new WaitForEndOfFrame();
+            hold = false;
         }
+        /* switch (response)
+         {
+             case 1:
+                 if (day == 1)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[0];
+                             break;
+                         case 2:
+                             fullText = CandiD[0];
+                             break;
+                         case 3:
+                             fullText = FelixD[0];
+                             break;
+                         case 4:
+                             fullText = GibsonD[0];
+                             break;
+                         case 5:
+                             fullText = JamesD[0];
+                             break;
+                         case 6:
+                             fullText = RoscoD[0];
+                             break;
+                         case 7:
+                             fullText = AveryD[0];
+                             break;
+                     }
+                 }
+                 if (day == 2)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[3];
+                             break;
+                         case 2:
+                             fullText = AveryD[3];
+                             break;
+                         case 3:
+                             fullText = RoscoD[3];
+                             break;
+                         case 4:
+                             fullText = GibsonD[3];
+                             break;
+                         case 5:
+                             fullText = JamesD[3];
+                             break;
+                         case 6:
+                             fullText = FelixD[3];
+                             break;
+                         case 7:
+                             fullText = CandiD[3];
+                             break;
+                     }
+                 }
+                 if (day == 3)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[6];
+                             break;
+                         case 2:
+                             fullText = FelixD[6];
+                             break;
+                         case 3:
+                             fullText = CandiD[6];
+                             break;
+                         case 4:
+                             fullText = GibsonD[6];
+                             break;
+                         case 5:
+                             fullText = JamesD[6];
+                             break;
+                         case 6:
+                             fullText = AveryD[6];
+                             break;
+                         case 7:
+                             fullText = RoscoD[6];
+                             break;
+                     }
+                 }
+                 if (day == 4)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[9];
+                             break;
+                         case 2:
+                             fullText = AveryD[9];
+                             break;
+                         case 3:
+                             fullText = RoscoD[9];
+                             break;
+                         case 4:
+                             fullText = GibsonD[9];
+                             break;
+                         case 5:
+                             fullText = JamesD[9];
+                             break;
+                         case 6:
+                             fullText = CandiD[9];
+                             break;
+                         case 7:
+                             fullText = FelixD[9];
+                             break;
+                     }
+                 }
+                 if (day == 5)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[12];
+                             break;
+                         case 2:
+                             fullText = CandiD[12];
+                             break;
+                         case 3:
+                             fullText = AveryD[12];
+                             break;
+                         case 4:
+                             fullText = GibsonD[12];
+                             break;
+                         case 5:
+                             fullText = JamesD[12];
+                             break;
+                         case 6:
+                             fullText = RoscoD[12];
+                             break;
+                         case 7:
+                             fullText = FelixD[12];
+                             break;
+                     }
+                 }
+                 break;
+             case 2:
+                 if (day == 1)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[1];
+                             break;
+                         case 2:
+                             fullText = CandiD[1];
+                             break;
+                         case 3:
+                             fullText = FelixD[1];
+                             break;
+                         case 4:
+                             fullText = GibsonD[1];
+                             break;
+                         case 5:
+                             fullText = JamesD[1];
+                             break;
+                         case 6:
+                             fullText = RoscoD[1];
+                             break;
+                         case 7:
+                             fullText = AveryD[1];
+                             break;
+                     }
+                 }
+                 if (day == 2)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[4];
+                             break;
+                         case 2:
+                             fullText = AveryD[4];
+                             break;
+                         case 3:
+                             fullText = RoscoD[4];
+                             break;
+                         case 4:
+                             fullText = GibsonD[4];
+                             break;
+                         case 5:
+                             fullText = JamesD[4];
+                             break;
+                         case 6:
+                             fullText = FelixD[4];
+                             break;
+                         case 7:
+                             fullText = CandiD[4];
+                             break;
+                     }
+                 }
+                 if (day == 3)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[7];
+                             break;
+                         case 2:
+                             fullText = FelixD[7];
+                             break;
+                         case 3:
+                             fullText = CandiD[7];
+                             break;
+                         case 4:
+                             fullText = GibsonD[7];
+                             break;
+                         case 5:
+                             fullText = JamesD[7];
+                             break;
+                         case 6:
+                             fullText = AveryD[7];
+                             break;
+                         case 7:
+                             fullText = RoscoD[7];
+                             break;
+                     }
+                 }
+                 if (day == 4)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[10];
+                             break;
+                         case 2:
+                             fullText = AveryD[10];
+                             break;
+                         case 3:
+                             fullText = RoscoD[10];
+                             break;
+                         case 4:
+                             fullText = GibsonD[10];
+                             break;
+                         case 5:
+                             fullText = JamesD[10];
+                             break;
+                         case 6:
+                             fullText = CandiD[10];
+                             break;
+                         case 7:
+                             fullText = FelixD[10];
+                             break;
+                     }
+                 }
+                 if (day == 5)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[13];
+                             break;
+                         case 2:
+                             fullText = CandiD[13];
+                             break;
+                         case 3:
+                             fullText = AveryD[13];
+                             break;
+                         case 4:
+                             fullText = GibsonD[13];
+                             break;
+                         case 5:
+                             fullText = JamesD[13];
+                             break;
+                         case 6:
+                             fullText = RoscoD[13];
+                             break;
+                         case 7:
+                             fullText = FelixD[13];
+                             break;
+                     }
+                 }
+                 break;
+             case 3:
+                 if (day == 1)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[2];
+                             break;
+                         case 2:
+                             fullText = CandiD[2];
+                             break;
+                         case 3:
+                             fullText = FelixD[2];
+                             break;
+                         case 4:
+                             fullText = GibsonD[2];
+                             break;
+                         case 5:
+                             fullText = JamesD[2];
+                             break;
+                         case 6:
+                             fullText = RoscoD[2];
+                             break;
+                         case 7:
+                             fullText = AveryD[2];
+                             break;
+                     }
+                 }
+                 if (day == 2)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[5];
+                             break;
+                         case 2:
+                             fullText = AveryD[5];
+                             break;
+                         case 3:
+                             fullText = RoscoD[5];
+                             break;
+                         case 4:
+                             fullText = GibsonD[5];
+                             break;
+                         case 5:
+                             fullText = JamesD[5];
+                             break;
+                         case 6:
+                             fullText = FelixD[5];
+                             break;
+                         case 7:
+                             fullText = CandiD[5];
+                             break;
+                     }
+                 }
+                 if (day == 3)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[8];
+                             break;
+                         case 2:
+                             fullText = FelixD[8];
+                             break;
+                         case 3:
+                             fullText = CandiD[8];
+                             break;
+                         case 4:
+                             fullText = GibsonD[8];
+                             break;
+                         case 5:
+                             fullText = JamesD[8];
+                             break;
+                         case 6:
+                             fullText = AveryD[8];
+                             break;
+                         case 7:
+                             fullText = RoscoD[8];
+                             break;
+                     }
+                 }
+                 if (day == 4)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[11];
+                             break;
+                         case 2:
+                             fullText = AveryD[11];
+                             break;
+                         case 3:
+                             fullText = RoscoD[11];
+                             break;
+                         case 4:
+                             fullText = GibsonD[11];
+                             break;
+                         case 5:
+                             fullText = JamesD[11];
+                             break;
+                         case 6:
+                             fullText = CandiD[11];
+                             break;
+                         case 7:
+                             fullText = FelixD[11];
+                             break;
+                     }
+                 }
+                 if (day == 5)
+                 {
+                     switch (animal)
+                     {
+                         case 1:
+                             fullText = BenjaminD[14];
+                             break;
+                         case 2:
+                             fullText = CandiD[14];
+                             break;
+                         case 3:
+                             fullText = AveryD[14];
+                             break;
+                         case 4:
+                             fullText = GibsonD[14];
+                             break;
+                         case 5:
+                             fullText = JamesD[14];
+                             break;
+                         case 6:
+                             fullText = RoscoD[14];
+                             break;
+                         case 7:
+                             fullText = FelixD[14];
+                             break;
+                     }
+                 }
+                 break;
+
+
+         
 
 
         for (int i = 0; i <= fullText.Length; i++)
@@ -1047,7 +1058,7 @@ public class GameManager : MonoBehaviour
             txt.text = currentText;
             yield return new WaitForEndOfFrame();
             hold = false;
-        }
+        }*/
 
     }
 
