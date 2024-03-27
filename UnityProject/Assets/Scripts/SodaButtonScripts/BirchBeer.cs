@@ -17,7 +17,6 @@ public class BirchBeer : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         cup.buttonbirchbeer = true;
         Soda.SetActive(true);
     }
-    int count = 0;
     public void OnPointerUp(PointerEventData eventData)
     {
         ispressed = false;

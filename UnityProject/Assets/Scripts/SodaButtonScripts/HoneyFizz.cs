@@ -17,7 +17,6 @@ public class HoneyFizz : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         cup.honeyfizz = true;
         Soda.SetActive(true);
     }
-    int count = 0;
     public void OnPointerUp(PointerEventData eventData)
     {
         ispressed = false;
