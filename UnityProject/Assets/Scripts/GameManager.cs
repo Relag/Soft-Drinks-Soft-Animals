@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
     GameObject[] Cup;
     public GameObject NextCustomer;
 
+    int drinkSuccess = 0;
+    int drinkFail = 0;
+
     private void Start()
     {
         SizeButtons = GameObject.FindGameObjectsWithTag("SizeButtons");
@@ -88,7 +91,7 @@ public class GameManager : MonoBehaviour
             item.SetActive(false);
         }
         // OrderSetter();
-        ChangeOrderDay1();
+        NextOrder();
 
     }
 
@@ -99,13 +102,30 @@ public class GameManager : MonoBehaviour
         Drink drinkAttempt = new Drink(soda1, soda2, soda3, flavor1, flavor2, flavor3, (int)size);
 
         PassFail = drinkAttempt.IsAccurate(currentCustomer.GetDrink());
-        OrderNumber += 1;
+
+        if (PassFail)
+            drinkSuccess++;
+        else
+            drinkFail++;
 
         EventManager();
 
-        NextCustomer.SetActive(true);
+        if (OrderNumber < 7)
+            OrderNumber += 1;
+        else {
+            OrderNumber = 1;
+            dayCount++;
+        }
+
+        if (dayCount < 5)
+            NextCustomer.SetActive(true);
+        else
+            FinishScreen();
     }
 
+    private void FinishScreen() {
+        throw new NotImplementedException();
+    }
 
     public void Flavor1()
     {
@@ -160,7 +180,7 @@ public class GameManager : MonoBehaviour
 
     //ShowText(int day, int animal, int response)
 
-    public void ChangeOrderDay1()
+    public void NextOrder()
     {
         switch (OrderNumber)
         {
@@ -176,17 +196,18 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
                 break;
             case 3:
-            currentCustomer = new James();//Felix 5
-                m_Image.sprite = Felix;
-                StopAllCoroutines();
-                StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
-                break;
-            case 4:
             currentCustomer = new Gibson();//Goat 2
-                m_Image.sprite = Gibson;
-                StopAllCoroutines();
-                StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
-                break;
+            m_Image.sprite = Gibson;
+            StopAllCoroutines();
+            StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
+            break;
+            case 4:
+            currentCustomer = new James();//Felix 5
+            m_Image.sprite = Felix;
+            StopAllCoroutines();
+            StartCoroutine(ShowText(currentCustomer.GetDialogue(dayCount)));
+            break;
+         
             case 5:
             currentCustomer = new Felix();//Dog 3
                 m_Image.sprite = JJ;
