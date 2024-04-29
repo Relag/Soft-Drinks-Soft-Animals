@@ -29,7 +29,7 @@ public class CSVReader
     /// </summary>
     /// <returns>a two-dimensional array. first index indicates the row.  second index indicates the column.</returns>
     /// <param name="src">raw CSV contents as string</param>
-    public List<List<string>> ParseCSV(string src)
+    public Dictionary<string, string> ParseCSV(string src, LANGUAGE language)
     {
         var rows = new List<List<string>>();
         var cols = new List<string>();
@@ -76,7 +76,7 @@ public class CSVReader
                         }
                         cols.Add(buffer.ToString());
                         rows.Add(cols);
-                        return rows;
+                        return MakeDictionary(rows, language);
 
                     case ParsingMode.OutQuote:
                         if (c == ',')
@@ -86,20 +86,20 @@ public class CSVReader
                             cols.Add(buffer.ToString());
                             cols.Add(string.Empty);
                             rows.Add(cols);
-                            return rows;
-                        }
+                            return MakeDictionary(rows, language);
+                    }
                         if (cols.Count == 0)
                         {
                             // if the final line is empty, ignore it. 
                             if (string.Empty.Equals(c.ToString().Trim()))
                             {
-                                return rows;
+                                return MakeDictionary(rows, language); 
                             }
                         }
                         buffer.Append(c);
                         cols.Add(buffer.ToString());
                         rows.Add(cols);
-                        return rows;
+                        return MakeDictionary(rows, language);
                 }
             }
 
@@ -175,7 +175,14 @@ public class CSVReader
                     break;
             }
         }
-        return rows;
+        return MakeDictionary(rows, language);
     }
 
+    private Dictionary<string, string> MakeDictionary(List<List<string>> csvList, LANGUAGE language) {
+        Dictionary<string, string> keyLanguage = new Dictionary<string, string>();
+
+        for (int i = 0; i <= csvList[0].Count; i++)
+            keyLanguage.Add(csvList[i][0], csvList[i][(int)language + 1]);
+        return keyLanguage;
+    }
 }
